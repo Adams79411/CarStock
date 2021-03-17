@@ -3,16 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import {  DuplicatePipe } from 'src/app/pipe/DuplicatePipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DuplicatePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ DuplicatePipe ],
+  bootstrap: [AppComponent],
+  exports: [DuplicatePipe]
 })
 export class AppModule { }
