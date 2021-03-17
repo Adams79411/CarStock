@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { CarstockService } from './carstock.service';
 
 @Component({
   selector: 'app-root',
@@ -15,9 +16,9 @@ export class AppComponent {
   year: Array<Number> = [];
   engine: Array<String> = [];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private carStockService: CarstockService) { }
   ngOnInit() {
-    this.httpClient.get("assets/query_results.json").subscribe(data => {
+    this.carStockService.getCarData().subscribe(data => {
       this.stockLength = data['body'].data.length;
       this.data = data['body'].data;
     })

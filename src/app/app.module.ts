@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import {  DuplicatePipe } from 'src/app/pipe/DuplicatePipe';
+import { CarstockService } from './carstock.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import {  DuplicatePipe } from 'src/app/pipe/DuplicatePipe';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ DuplicatePipe ],
+  providers: [ DuplicatePipe, CarstockService ],
   bootstrap: [AppComponent],
   exports: [DuplicatePipe]
 })
